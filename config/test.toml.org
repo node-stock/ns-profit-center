@@ -40,6 +40,19 @@
   id = "stoc"
   apiKey = "xx"
   secret = "cfa"
+[[accounts]]
+# 乐天证券 
+[accounts.rakuten]
+  # 实际券商账号
+  id = "xxx6"
+  # 登录密码
+  pass = "passx"
+  # 支付密码
+  otp = "xxxx"
+# bitbank.cc 
+[accounts.bitbank]
+  # 账号
+  id = "coin"
 ###
 ### [trader]
 ###
