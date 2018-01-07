@@ -14,50 +14,56 @@
   timezone = "+09:00"
   operatorsAliases = false
   logging = false
+[store.pool]
+  min = 0
+  max = 5
+  idle = 10000
+  acquire = 10000
+  evict = 60000
 ###
-### [pubnub]
-###
-### 数据发布接口
-###
-[pubnub]
-  publishKey = "pub-c-4e57d322-4d66-470d-a4e0-feb12c68d816"
-  subscribeKey = "sub-c-39a094ea-a1b7-11e7-8e6b-ae1a713ba7dc"
-###
-### [account]
+### [[accounts]]
 ###
 ### 账户相关配置
 ###
-[account]
+[[accounts]]
+# 乐天证券 
+[accounts.rakuten]
+  # 实际券商账号
   id = "xxx6"
+  # 登录密码
   pass = "passx"
+  # 支付密码
+  otp = "xxxx"
+# bitbank.cc 
+[accounts.bitbank]
+  # 账号
+  id = "stoc"
+  apiKey = "xx"
+  secret = "cfa"
 ###
-### [marketspeed]
+### [trader]
 ###
-### marketspeed相关配置
+### trader相关配置
 ###
-[marketspeed]
-  version = "15.7"
-  dir = "C:/Program Files (x86)/MarketSpeed/MarketSpeed"
-  filename = "MarketSpeed.exe"
+[trader]
+  # 测试模式时 不执行真实交易操作
+  test = false
+  # Web交易者初始化股票界面
+  symbol = 6553
+  # host
+  host = "127.0.0.1"
+  # port
+  port = 6060
+  apiKey = "xx"
+  secret = "cfa"
+###
+### [pc]
+###
+### 利润中心相关配置
+###
+[pc]
+  # 利润中心相检测间隔（毫秒）
+  interval = 30000
 
-[ddeserv]
-  symbols = ["6553", "6664"]
-  startCron = '* */1 * * * *' # '55 8 * * *'
-  endCron = '* */2 * * * *' # '01 15 * * *'
-###
-### [influxdb]
-###
-### 时序列数据库相关配置
-###
-[influxdb]
-  host = '127.0.0.1'
-  database = 'ns-stock'
-###
-### [kapacitor]
-###
-### 数据监测相关配置
-###
-[kapacitor]
-  host = '127.0.0.1'
-  db = 'ns-stock'
-  rp = 'autogen'
+[slack]
+  url = 'https://hooks.slack.com/services/'

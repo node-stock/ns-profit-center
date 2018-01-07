@@ -1,6 +1,6 @@
 {
   "name": "ns-profit-center",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "node-stock profit center",
   "repository": {
     "type": "git",
@@ -12,26 +12,33 @@
   "scripts": {
     "rm": "rimraf dist",
     "start": "node dist/index.js",
-    "wdserv": "selenium-standalone start",
     "tsc": "npm run rm && tsc -p tsconfig.development.json",
     "tslint": "tslint --project ./tslint.json",
     "test": "cross-env NODE_ENV=test mocha dist/**/*.test.js --timeout 3000 --require intelli-espower-loader",
     "prepare": "npm run rm && tsc -p tsconfig.json"
   },
   "dependencies": {
-    "moment": "^2.19.3",
+    "bignumber.js": "^5.0.0",
+    "bitbank-handler": "0.0.1-beta.2",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.20.1",
     "mysql2": "^1.5.1",
-    "ns-common": "0.0.11",
-    "ns-influxdb": "0.0.7",
-    "ns-manager": "0.0.35",
-    "ns-store": "0.0.32",
+    "ns-alerter": "0.0.12",
+    "ns-calc": "0.0.21",
+    "ns-common": "0.0.19",
+    "ns-manager": "0.0.70",
+    "ns-store": "0.0.51",
+    "ns-types": "0.0.62",
     "numeral": "^2.0.6",
     "rimraf": "^2.6.2",
     "toml": "^2.3.3"
   },
   "devDependencies": {
-    "@types/config": "0.0.32",
+    "@types/bignumber.js": "^5.0.0",
+    "@types/config": "0.0.33",
+    "@types/isomorphic-fetch": "0.0.34",
     "@types/mocha": "^2.2.44",
+    "@types/moment": "^2.13.0",
     "@types/node": "^8.0.56",
     "@types/numeral": "0.0.22",
     "@types/power-assert": "^1.4.29",
@@ -40,7 +47,7 @@
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^4.0.1",
     "power-assert": "^1.4.4",
-    "ts-node": "^3.3.0",
+    "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
     "typescript": "^2.6.2"
   }
