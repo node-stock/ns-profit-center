@@ -68,7 +68,7 @@ export class ProfitCenter {
           const lastPrice = new BigNumber(lastAveragePrice);
           const stopLossPrice = Calc.stopLoss(position.symbol, lastPrice.toFixed());
           // 最新价格 <= 止损价
-          if (lastPrice.greaterThan(stopLossPrice)) {
+          if (lastPrice.lessThanOrEqualTo(stopLossPrice)) {
             Log.system.info(`持仓：${JSON.stringify(position, null, 2)}`);
             Log.system.info(`最新价格(${lastPrice.toFixed()}) <= 止损价(${stopLossPrice}),执行止损单！`);
             const asset = await this.getAsset(account, position);
