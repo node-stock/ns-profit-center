@@ -1,6 +1,6 @@
 {
   "name": "ns-profit-center",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "node-stock profit center",
   "repository": {
     "type": "git",
@@ -24,9 +24,9 @@
     "moment": "^2.20.1",
     "mysql2": "^1.5.1",
     "ns-alerter": "0.0.12",
-    "ns-calc": "0.0.21",
+    "ns-calc": "0.0.22",
     "ns-common": "0.0.19",
-    "ns-manager": "0.0.70",
+    "ns-manager": "0.0.71",
     "ns-store": "0.0.51",
     "ns-types": "0.0.62",
     "numeral": "^2.0.6",

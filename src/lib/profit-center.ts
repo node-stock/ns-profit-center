@@ -56,7 +56,7 @@ export class ProfitCenter {
 
     for (const acc of this.accounts) {
       const account = await AccountManager.get(acc.bitbank.id);
-      Log.system.info('账户：', JSON.stringify(account, null, 2));
+      Log.system.info('账户：', JSON.stringify(account));
       if (account && account.positions && account.positions.length > 0) {
 
         for (const position of account.positions) {
